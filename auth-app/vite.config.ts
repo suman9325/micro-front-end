@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'auth-app',
+      name: 'auth',
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/App.tsx',

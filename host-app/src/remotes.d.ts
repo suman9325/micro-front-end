@@ -1,1 +1,1 @@
-declare module 'auth-app/App';
+declare module 'auth/App';
