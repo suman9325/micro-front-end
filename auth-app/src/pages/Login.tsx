@@ -78,26 +78,24 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="d-flex align-items-center w-600">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="">
-            <div className="card shadow-lg border-0 rounded-4 overflow-hidden">
-              <div className="card-body p-4 p-md-5 text-center">
+    <div className="d-flex align-items-center justify-content-center min-vh-100">
+      <div className="w-100" style={{ maxWidth: '400px' }}>
+        <div className="card shadow-lg border-0 rounded-4 overflow-hidden">
+              <div className="card-body p-4 text-center">
                 {/* Logo */}
                 <div
-                  className="mx-auto mb-4 d-flex align-items-center justify-content-center rounded-circle text-white fw-bold"
+                  className="mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle text-white fw-bold"
                   style={{
-                    width: '100px',
-                    height: '100px',
+                    width: '72px',
+                    height: '72px',
                     backgroundColor: '#0d6efd',
-                    fontSize: '2rem',
+                    fontSize: '1.25rem',
                   }}
                 >
                   LOGO
                 </div>
-                <h3 className="mb-3 fw-semibold">Welcome Back!</h3>
-                <p className="text-muted mb-4">Sign in to your business account</p>
+                <h3 className="mb-2 fw-semibold h5">Welcome Back!</h3>
+                <p className="text-muted small mb-3">Sign in to your business account</p>
                 <form onSubmit={handleSubmit} noValidate>
                   {/* Email */}
                   <div className="form-floating mb-3">
@@ -171,12 +169,10 @@ const Login: React.FC = () => {
                   </p>
                 </form>
               </div>
-              <div className="card-footer bg-transparent text-center py-4 border-0">
+              <div className="card-footer bg-transparent text-center py-3 border-0">
                 <small className="text-muted">© 2025 Your Company. All rights reserved.</small>
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </div>
   );

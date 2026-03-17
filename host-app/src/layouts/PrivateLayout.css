@@ -1,0 +1,32 @@
+.private-layout {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  flex-shrink: 0;
+}
+
+.sidebar .nav-link {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar .nav-link:hover:not(.active) {
+  background-color: rgba(13, 110, 253, 0.1);
+  color: var(--bs-primary) !important;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  background-color: #fff;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none;
+  }
+}
