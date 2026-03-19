@@ -5,7 +5,7 @@ import { PUBLIC_ROUTES, PRIVATE_ROUTES } from '../constants/routes';
 export const publicRouteConfig = [
   {
     path: PUBLIC_ROUTES.LOGIN,
-    Component: lazy(() => import('auth/App')),
+    Component: lazy(() => import('../pages/Login/Login')),
   },
   // Add more: { path: PUBLIC_ROUTES.FORGOT_PASSWORD, Component: lazy(() => import('auth/ForgotPassword')) },
 ] as const;

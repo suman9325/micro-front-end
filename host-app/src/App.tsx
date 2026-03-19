@@ -5,15 +5,14 @@ import {
   publicRouteConfig,
 } from './config/routeConfig';
 import { ROUTES } from './constants/routes';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { PrivateRoute } from './routes/PrivateRoute';
 import { PublicRoute } from './routes/PublicRoute';
+import { isAuthenticated } from './utils/auth';
 import './App.css';
 
 function RootRedirect() {
-  const { isAuthenticated } = useAuth();
   return (
-    <Navigate to={isAuthenticated ? ROUTES.DASHBOARD : ROUTES.LOGIN} replace />
+    <Navigate to={isAuthenticated() ? ROUTES.DASHBOARD : ROUTES.LOGIN} replace />
   );
 }
 
@@ -58,8 +57,6 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <AuthProvider>
-      <AppRoutes />
-    </AuthProvider>
+    <AppRoutes />
   );
 }
