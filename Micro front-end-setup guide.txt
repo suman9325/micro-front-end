@@ -11,7 +11,6 @@ step -2
 
 Create Remote apps
 
-npm create vite@latest auth-app
 npm create vite@latest dashboard-app
 
 step -3
