@@ -149,7 +149,7 @@ This project was created to explore:
 
 ## 👨‍💻 Author
 
-**M D**
+**Suman Khamaru**
 
 Frontend Developer
 Tech Stack: React, Angular, JavaScript, HTML, CSS
