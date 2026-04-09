@@ -7,8 +7,19 @@ export const PUBLIC_ROUTES = {
 /** Private routes - require authentication */
 export const PRIVATE_ROUTES = {
   DASHBOARD: '/dashboard',
+  /** Base path; nested /online and /offline are handled inside the catalogue remote */
   CATALOGUE: '/catalogue',
+  CATALOGUE_ONLINE: '/catalogue/online',
+  CATALOGUE_OFFLINE: '/catalogue/offline',
   // Add more as needed: ORDERS: '/orders', SETTINGS: '/settings',
+} as const;
+
+/**
+ * React Router path pattern for the catalogue micro-frontend (nested routes live in the remote).
+ * Use this in the host route table, not for NavLink `to`.
+ */
+export const PRIVATE_ROUTE_PATTERNS = {
+  CATALOGUE: 'catalogue/*',
 } as const;
 
 export const ROUTES = {

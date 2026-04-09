@@ -1,0 +1,14 @@
+.sidebar-catalogue-toggle:hover {
+  background-color: rgba(13, 110, 253, 0.08) !important;
+}
+
+.sidebar-catalogue-chevron {
+  display: inline-block;
+  transform: rotate(-90deg);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.sidebar-catalogue-chevron.is-open {
+  transform: rotate(0deg);
+}

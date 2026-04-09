@@ -23,7 +23,10 @@ const Login: React.FC = () => {
   const [passwordError, setPasswordError] = useState('');
   const [touched, setTouched] = useState({ email: false, password: false });
 
+  const location = useLocation();
   const navigate = useNavigate();
+  const state = location.state as LocationState | null;
+  const destination = state?.from?.pathname ?? ROUTES.DASHBOARD;
 
   // Validate email format
   const validateEmail = (value: string) => {
@@ -80,7 +83,7 @@ const Login: React.FC = () => {
     // (Replace with real API call later.)
     void rememberMe; // kept for parity with the UI
     setAuthToken(DEMO_TOKEN);
-    navigate(ROUTES.DASHBOARD, { replace: true });
+    navigate(destination, { replace: true });
   };
 
   return (

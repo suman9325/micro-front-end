@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { PUBLIC_ROUTES, PRIVATE_ROUTES } from '../constants/routes';
+import { PRIVATE_ROUTE_PATTERNS, PUBLIC_ROUTES, PRIVATE_ROUTES } from '../constants/routes';
 
 /** Lazy-loaded components for public routes */
 export const publicRouteConfig = [
@@ -17,7 +17,7 @@ export const privateRouteConfig = [
     Component: lazy(() => import('dashboard/App')),
   },
   {
-    path: PRIVATE_ROUTES.CATALOGUE,
+    path: PRIVATE_ROUTE_PATTERNS.CATALOGUE,
     Component: lazy(() => import('catalogue/App')),
   },
   // Add more: { path: PRIVATE_ROUTES.ORDERS, Component: lazy(() => import('orders/App')) },
