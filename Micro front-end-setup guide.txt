@@ -17,11 +17,11 @@ step -3
 
 Install Module Federation Plugin in all app
 
-npm install @originjs/vite-plugin-federation @vitejs/plugin-react --save-dev
+-- npm install react-router-dom @originjs/vite-plugin-federation @vitejs/plugin-react --save-dev
 
 Install concurrently in remote apps
 
-npm i concurrently --save-dev
+-- npm i concurrently --save-dev
 
 Note: while creating apps 
 
