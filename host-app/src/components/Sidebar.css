@@ -1,3 +1,22 @@
+.sidebar {
+  text-align: start;
+}
+
+.sidebar .nav.flex-column {
+  align-items: stretch;
+  width: 100%;
+}
+
+.sidebar .nav.flex-column > .nav-link,
+.sidebar .nav.flex-column > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sidebar .nav-link {
+  text-align: start;
+}
+
 .sidebar-catalogue-toggle:hover {
   background-color: rgba(13, 110, 253, 0.08) !important;
 }

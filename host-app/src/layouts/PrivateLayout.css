@@ -4,6 +4,11 @@
   background-color: #f8f9fa;
 }
 
+/* Lets the main column shrink so content doesn’t force a second (body) scrollbar */
+.private-layout__body {
+  min-height: 0;
+}
+
 .sidebar {
   width: 240px;
   min-width: 240px;
@@ -22,6 +27,9 @@
 .main-content {
   flex: 1;
   min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
   background-color: #fff;
 }
 

@@ -20,7 +20,7 @@ export function Sidebar() {
         <NavLink
           to={PRIVATE_ROUTES.DASHBOARD}
           className={({ isActive }) =>
-            `nav-link rounded ${isActive ? 'active bg-primary' : 'text-dark'}`
+            `nav-link text-start rounded ${isActive ? 'active bg-primary' : 'text-dark'}`
           }
           end
         >
@@ -58,7 +58,7 @@ export function Sidebar() {
                 key={to}
                 to={to}
                 className={({ isActive }) =>
-                  `nav-link rounded ms-2 ps-3 ${isActive ? 'active bg-primary' : 'text-dark'}`
+                  `nav-link text-start rounded ms-2 ps-3 ${isActive ? 'active bg-primary' : 'text-dark'}`
                 }
               >
                 {label}
@@ -66,6 +66,16 @@ export function Sidebar() {
             ))}
           </div>
         </div>
+
+        <NavLink
+          to={PRIVATE_ROUTES.COMMUNICATION}
+          className={({ isActive }) =>
+            `nav-link text-start rounded ${isActive ? 'active bg-primary' : 'text-dark'}`
+          }
+          end
+        >
+          Communication
+        </NavLink>
       </nav>
     </aside>
   );

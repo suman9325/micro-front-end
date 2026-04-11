@@ -20,5 +20,9 @@ export const privateRouteConfig = [
     path: PRIVATE_ROUTE_PATTERNS.CATALOGUE,
     Component: lazy(() => import('catalogue/App')),
   },
+  {
+    path: PRIVATE_ROUTES.COMMUNICATION,
+    Component: lazy(() => import('communication/App')),
+  },
   // Add more: { path: PRIVATE_ROUTES.ORDERS, Component: lazy(() => import('orders/App')) },
 ] as const;

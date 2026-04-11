@@ -11,6 +11,7 @@ export const PRIVATE_ROUTES = {
   CATALOGUE: '/catalogue',
   CATALOGUE_ONLINE: '/catalogue/online',
   CATALOGUE_OFFLINE: '/catalogue/offline',
+  COMMUNICATION: '/communication',
   // Add more as needed: ORDERS: '/orders', SETTINGS: '/settings',
 } as const;
 

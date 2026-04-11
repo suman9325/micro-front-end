@@ -6,11 +6,10 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'host',
-      remotes: {
-        dashboard: 'http://localhost:5002/assets/remoteEntry.js',
-        catalogue: 'http://localhost:5003/assets/remoteEntry.js',
-        communication: 'http://localhost:5004/assets/remoteEntry.js',
+      name: 'communication',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './App': './src/App.tsx',
       },
       shared: ['react', 'react-dom', 'react-router-dom'],
     }),
@@ -20,5 +19,14 @@ export default defineConfig({
     target: 'esnext',
     minify: false,
     cssCodeSplit: false,
+  },
+  server: {
+    port: 5004,
+    strictPort: true,
+    cors: true
+  },
+  preview: {
+    port: 5004,
+    strictPort: true,
   },
 });
