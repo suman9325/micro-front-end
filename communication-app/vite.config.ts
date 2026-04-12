@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
+  optimizeDeps: {
+    exclude: ['shared-lib'],
+  },
   plugins: [
     react(),
     federation({
@@ -23,7 +26,8 @@ export default defineConfig({
   server: {
     port: 5004,
     strictPort: true,
-    cors: true
+    cors: true,
+    fs: { allow: ['..'] },
   },
   preview: {
     port: 5004,

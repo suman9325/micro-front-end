@@ -1,0 +1,88 @@
+.sl-confirm-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.45);
+  box-sizing: border-box;
+}
+
+.sl-confirm-dialog {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.25rem 1.35rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow:
+    0 4px 6px rgba(15, 23, 42, 0.07),
+    0 12px 24px rgba(15, 23, 42, 0.12);
+  box-sizing: border-box;
+}
+
+.sl-confirm-title {
+  margin: 0 0 0.65rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #0f172a;
+}
+
+.sl-confirm-message {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.sl-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.sl-confirm-btn {
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.sl-confirm-btn--secondary {
+  color: #334155;
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.sl-confirm-btn--secondary:hover {
+  background: #e2e8f0;
+}
+
+.sl-confirm-btn--primary {
+  color: #fff;
+  background: #2563eb;
+}
+
+.sl-confirm-btn--primary:hover {
+  background: #1d4ed8;
+}
+
+.sl-confirm-btn--danger {
+  color: #fff;
+  background: #dc2626;
+}
+
+.sl-confirm-btn--danger:hover {
+  background: #b91c1c;
+}
+
+.sl-confirm-btn:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

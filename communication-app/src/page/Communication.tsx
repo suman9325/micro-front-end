@@ -1,4 +1,5 @@
 import { type FormEvent, useState } from 'react'
+import { ConfirmModal } from 'shared-lib'
 import './Communication.css'
 
 export default function Communication() {
@@ -6,9 +7,16 @@ export default function Communication() {
   const [channel, setChannel] = useState('email')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
+  const [sendConfirmOpen, setSendConfirmOpen] = useState(false)
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
+    setSendConfirmOpen(true)
+  }
+
+  function handleConfirmSend() {
+    setSendConfirmOpen(false)
+    // Hook up API send here when ready.
   }
 
   return (
@@ -77,6 +85,17 @@ export default function Communication() {
           </div>
         </form>
       </div>
+
+      <ConfirmModal
+        open={sendConfirmOpen}
+        title="Send message?"
+        message="This message will be sent using the details you entered. Continue?"
+        confirmLabel="Send"
+        cancelLabel="Back to edit"
+        confirmVariant="primary"
+        onConfirm={handleConfirmSend}
+        onCancel={() => setSendConfirmOpen(false)}
+      />
     </div>
   )
 }
