@@ -1,62 +1,45 @@
-Micro front-end
+🚀 Micro Frontend Architecture using Vite + Module Federation
 
+This project demonstrates how to build a Micro Frontend architecture using Vite, React, and Module Federation.
 
-step-1
+📦 Tech Stack
+React + TypeScript (SWC)
+Vite
+Module Federation (@originjs/vite-plugin-federation)
+React Router DOM
+🏗️ Project Structure
+workspace/
+│
+├── host-app/           # Shell / Host application
+├── dashboard-app/      # Remote app 1
+├── profile-app/        # Remote app 2
+├── shared-lib/         # Shared library (optional)
 
-Create Host/Shell
-
+⚙️ Step 1: Create Host (Shell)
+-------------------------------------
 npm create vite@latest host-app
 
-step -2
+Framework: React
+Variant: TypeScript + SWC
+Vite Beta: No
 
-Create Remote apps
-
+⚙️ Step 2: Create Remote Apps
+-------------------------------------
 npm create vite@latest dashboard-app
+npm create vite@latest profile-app
 
-step -3
+⚙️ Step 3: Install Dependencies
+-------------------------------------
+In ALL apps (Host + Remotes)
+    -- npm install bootstrap react-router-dom @originjs/vite-plugin-federation @vitejs/plugin-react --save-dev
 
-Install Module Federation Plugin in all app
+In Remote Apps (Optional - for running multiple apps)
+    -- npm install concurrently --save-dev
 
--- npm install react-router-dom @originjs/vite-plugin-federation @vitejs/plugin-react --save-dev
+🔌 Remote App Configuration (Example)
+-------------------------------------
 
-Install concurrently in remote apps
-
--- npm i concurrently --save-dev
-
-Note: while creating apps 
-
-*  Select a variant:
-
-|  > TypeScript + SWC  => choose this
-
-
-npm create vite@latest host-app
-Need to install the following packages:
-create-vite@8.3.0
-Ok to proceed? (y) y
-
-App creation snapshot 
--------------------------------
-> npx
-> create-vite host-app
-
-|
-o  Select a framework:
-|  React
-|
-o  Select a variant:
-|  TypeScript + SWC
-|
-o  Use Vite 8 beta (Experimental)?:
-|  No
-|
-o  Install with npm and start now?
-|  Yes
-
-
-
-Remote vite config
--------------------------
+📁 authentication-app/vite.config.ts
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -83,7 +66,7 @@ export default defineConfig({
   server: {
     port: 5001,
     strictPort: true,
-    cors: true
+    cors: true,
   },
   preview: {
     port: 5001,
@@ -91,10 +74,9 @@ export default defineConfig({
   },
 });
 
-
-
-Host vite config
----------------------
+🧩 Host App Configuration
+-------------------------------------
+📁 host-app/vite.config.ts
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -121,3 +103,52 @@ export default defineConfig({
   },
 });
 
+🔗 Using Remote Components in Host
+------------------------------------------
+Example:
+
+const AuthApp = React.lazy(() => import('authentication/App'));
+
+<Suspense fallback={<div>Loading...</div>}>
+  <AuthApp />
+</Suspense>
+
+
+📚 Shared Library Setup (Optional)
+------------------------------------------
+To create a shared reusable library:
+
+create a folder "shared-lib" in main/workspace folder
+
+Step 1: Initialize
+    -- npm init
+    -- npm install
+
+Step 2: Setup Structure
+shared-lib/
+│
+├── src/
+│   ├── utils/
+│   ├── components/
+│
+├── package.json
+├── tsconfig.json
+Step 3: Copy tsconfig.json
+
+Reuse configuration from any existing app.
+
+▶️ Running the Apps
+
+Start each app on different ports:
+
+# authentication-app
+npm run dev
+
+# dashboard-app
+npm run dev
+
+# profile-app
+npm run dev
+
+# host-app
+npm run dev
